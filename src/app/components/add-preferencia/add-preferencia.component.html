@@ -1,0 +1,49 @@
+<div id="form-container container">
+    <div class="row">
+        <div class="col-2"></div>
+        <form class="form col-8" (ngSubmit)="onSubmit()">
+            <h2 class="text-center">Selecciones su lenguaje de programacion preferido</h2>
+            <div class="form-group">
+                <label for="nombres">nombres</label>
+                <input type="text" name="nombres" [(ngModel)]="preferencia.nombres" placeholder="Nombres" class="form-control">
+                <label for="apellidos">apellidos</label>
+                <input type="text" name="apellidos" [(ngModel)]="preferencia.apellidos" placeholder="apellidos" class="form-control">
+                
+                <div>
+                    <label for="eleccion" class="form-check-label">eleccion</label>
+                    <br>
+                    <input type="radio" value="C#" name="preferencia" [(ngModel)]="preferencia.eleccion"  > C#
+                    <input type="radio" value="Java" name="preferencia" [(ngModel)]="preferencia.eleccion" > Java
+                </div>
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit</button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h4 class="modal-title">Informacion</h4>
+                    </div>
+                    <div class="modal-body">
+                    <p>Se guardo su respuesta</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+        </form>
+        <div class="col-2"></div>
+    </div>
+    <button (click)="logout()" class="btn btn-info">log out</button>
+</div>
+
+
+
+
